@@ -58,7 +58,7 @@ module.exports = function(opts) {
                     }
                 }
             }
-            file.contents = new Buffer(str);
+            file.contents = Buffer.from(str);
 
             return callback(null, file);
         }
