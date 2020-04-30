@@ -1,20 +1,20 @@
 {
-    "name": "gulp-inline-base64",
-    "version": "0.1.5",
-    "description": "Convert assets to inline datauri, ideal to integrate small pictures in your css.",
+    "name": "gulp-url-base64-2020",
+    "version": "0.1.6",
+    "description": "Convert assets to inline data uri, ideal to integrate small pictures in your css. This project is foked and updated. Hope to keep it uptodate",
     "main": "index.js",
     "dependencies": {
-        "event-stream": "x.x.x",
-        "gulp-util": "x.x.x",
-        "mime": "x.x.x"
+        "event-stream": "^3.0",
+        "gulp-util": "^3.0",
+        "mime": "^2.0"
     },
     "author": {
-        "name": "G33kLabs",
-        "email": "contact@g33klabs.fr"
+        "name": "SiRKo",
+        "email": "sirko@fringe.zone"
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/G33kLabs/gulp-inline-base64.git"
+        "url": "https://github.com/DMSavchik/gulp-inline-base64-2020.git"
     },
     "license": "MIT",
     "engines": {
