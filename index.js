@@ -16,7 +16,7 @@ module.exports = function(opts) {
         var isStream = file.contents && typeof file.contents.on === 'function' && typeof file.contents.pipe === 'function';
         var isBuffer = file.contents instanceof Buffer;
         if(opts.useRelativePath){
-            app_path = file.path.replace(/\/[^/]+$/, '/');
+            app_path = file.path.replace(/\/[^/]+$/, '/').replace(file.basename, "");                
         }
         if (isBuffer) {
             var str = String(file.contents);
@@ -35,6 +35,9 @@ module.exports = function(opts) {
             for (var i = 0, len = matches.length; i < len; i++) {
                 if (matches[i].url.indexOf('data:image') === -1) { //if find -> image already decoded
                     var filepath = app_path + path.normalize(matches[i].url);
+                    if(filepath.indexOf("?") !== -1 ) filepath = filepath.substring(0, filepath.indexOf('?'));
+                    else if(filepath.indexOf("#") !== -1)  filepath = filepath.substring(0, filepath.indexOf('#'));
+                    filepath = path.normalize(filepath);
                     if (fs.existsSync(filepath)) {
                         var size = fs.statSync(filepath).size;
 
@@ -47,7 +50,7 @@ module.exports = function(opts) {
                         // Else replace by inline base64 version
                         else {
                             var b = fs.readFileSync(filepath);
-                            str = str.replace(matches[i].txt, 'url(' + ('data:' + mime.lookup(filepath) + ';base64,' + b.toString('base64')) + ')');
+                            str = str.replace(matches[i].txt, 'url(' + ('data:' + mime.getType(filepath) + ';base64,' + b.toString('base64')) + ')');
                         }
 
                     } else {
