@@ -1,6 +1,11 @@
-GULP inline-base64
+GULP gulp-url-base64-2020
 ==================
 
+Forked from https://github.com/G33kLabs/gulp-inline-base64
+Thanks to G33kLabs for this script
+
+all info below is updated and some script bugs are fixed
+----------
 This helper will inject images and fonts into your css files.
 
 Warning ! This technique is really efficient with small files (<14 Kb) cause it avoids DNS requests and makes the page loading faster. But for larger files it will be a mistake to use it !
@@ -9,7 +14,7 @@ Install it
 ----------
 
 ```
-npm install --save-dev gulp-inline-base64
+npm install --save-dev gulp-url-base64-2020
 ```
 
 Use it
@@ -19,7 +24,7 @@ Here is my sass config. As you can see, I use the 'maxSize' option to specitfy t
 
 ```
 var sass = require('gulp-sass'),
-	inline_base64 = require('gulp-inline-base64'),
+	inline_base64 = require('gulp-url-base64-2020'),
 	autoprefixer = require('gulp-autoprefixer');
 ...
 

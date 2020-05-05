@@ -1,7 +1,7 @@
 {
     "name": "gulp-url-base64-2020",
-    "version": "0.1.6",
-    "description": "Convert assets to inline data uri, ideal to integrate small pictures in your css. This project is foked and updated. Hope to keep it uptodate",
+    "version": "0.0.2",
+    "description": "Forked from abandonment repo. Original script by G33kLabs. Convert assets to inline data uri, ideal to integrate small pictures in your css. This project is foked and updated. Hope to keep it uptodate",
     "main": "index.js",
     "dependencies": {
         "event-stream": "^3.0",
